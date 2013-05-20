@@ -1,0 +1,20 @@
+{
+  "name": "picknmix",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "lodash": "*",
+    "browserify": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "sinon": "*",
+    "benchmark": "*"
+  },
+  "readmeFilename": "README.md"
+}
