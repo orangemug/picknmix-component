@@ -1,17 +1,103 @@
 <!DOCTYPE html>
 <html>
-<head><title>Pick N Mix Widet</title></head><body>
+<head>
+	<title>Pick N Mix Widet</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$(".pickNMixSearchChooser").delegate(".option.button.add", "click", function() {
+				var newvisibility, newsearch;
+
+				newsearch = $(this).closest(".pickNMixSearchChooser").find(".newSearch");
+
+				if ($(this).hasClass("active")) {
+					newsearch.css("visibility", "hidden");
+					$(this).removeClass("active");
+				} else {
+					newsearch.css("visibility", "visible");
+					$(this).addClass("active");
+				}
+
+				newsearch.css("visibility", newvisibility);
+
+			});
+		});
+	</script>
+
+	<style type="text/css">
+
+		.pickNMixSearchChooser .options {
+			margin:0;
+			padding:0;
+		}
+
+		.pickNMixSearchChooser .option {
+			float:left;
+			list-style:none;
+			border:1px solid black;
+			margin:0 5px 0 0;
+			padding:2px 8px;
+			cursor:pointer;
+		}
+
+		.pickNMixSearchChooser .option .remove {
+			margin-left:15px;
+		}
+
+		.pickNMixSearchChooser .option.add.active {
+			background-color:black;
+			color:white;
+			font-weight:bold;
+		}
+
+		.pickNMixSearchChooser .clearer {
+			clear:both;
+		}
+
+		.pickNMixSearchChooser .newSearch {
+			clear:both;
+			visibility:hidden;
+			padding-top:5px;
+			width:100%;
+			padding-right:95px;
+			box-sizing:border-box;
+			position:relative;
+		}
+
+		.pickNMixSearchChooser .newSearch .searchterm {
+			width:100%;
+		}
+
+		.pickNMixSearchChooser .newSearch .addsearch {
+			position:absolute;
+			right:0;
+			top:5px;
+			width:82px;
+		}
+
+	</style>
+
+
+</head>
+
+
+<body>
 
 <div class="pickNMixSearchChooser">
-	<ul>
-		<li>Term 1</li>
-		<li>Term 2</li>
-		<li>Term 3</li>
-		<li>+</li>
+	<ul class="options">
+		<li class="option search">Term 1 <span class="remove">x</span></li>
+		<li class="option search">Term 2 <span class="remove">x</span></li>
+		<li class="option search">Term 3 <span class="remove">x</span></li>
+		<li class="option button add">+</li>
 	</ul>
 	<form class="newSearch">
-		<input name="searchterm" value="" />
+		<input name="searchterm" class="searchterm" value="" />
+		<button name="addsearch" class="addsearch">Add search</button>
 	</form>
+	<div class="clearer"></div>
 </div>
 
 <div class="pickNMixWidget">
