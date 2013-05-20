@@ -1,1 +1,1 @@
-module.export = require("./lib/picknmix");
+module.export = require("./lib/picknmix")();

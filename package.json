@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "lodash": "*",
-    "browserify": "*"
+    "browserify": "*",
+    "backbone": "*"
   },
   "devDependencies": {
     "mocha": "*",
